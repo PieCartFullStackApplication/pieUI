@@ -18,6 +18,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ViewComponent } from './view/view.component';
 import { MatCardModule } from '@angular/material/card';
 import { CartComponent } from './cart/cart.component';
+import { MatTableModule } from '@angular/material/table';
+import { OrderComponent } from './order/order.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -27,7 +31,8 @@ import { CartComponent } from './cart/cart.component';
     MenuComponent,
     AboutComponent,
     ViewComponent,
-    CartComponent
+    CartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,10 @@ import { CartComponent } from './cart/cart.component';
     MatButtonModule,
     MatButtonToggleModule,
     MatSnackBarModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
