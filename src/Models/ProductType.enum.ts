@@ -1,0 +1,7 @@
+export enum ProductType {
+  DEFAULT,
+  GROCERIES,
+  SPORT_EQUIPMENT,
+  ELECTRONICS,
+  BOOKS
+}

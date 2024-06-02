@@ -1,0 +1,63 @@
+<div class="container mat-elevation-z2 p-4 col-md-6" style="background-color: rgba(255, 255, 200, 0.5);">
+  <h2 class="mb-4">Add/Update Product</h2>
+  <div class="row mb-2">
+    <div class="col-md-auto toggle-container mr-3">
+      <mat-button-toggle-group aria-label="Mode selection">
+        <mat-button-toggle value="create" (click)="toggleToCreate()">Create</mat-button-toggle>
+        <mat-button-toggle value="update" (click)="toggleToUpdate()">Update</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <form (ngSubmit)="onSubmit()" class="mb-2">
+    <div class="row my-0">
+      <div class="col-md-12 my-0">
+        <mat-form-field style="width: 100%;">
+          <input matInput type="number" placeholder="ID" [(ngModel)]="product.id" name="productId" required>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row my-0">
+      <div class="col-md-12 my-0">
+        <mat-form-field style="width: 100%;">
+          <input matInput type="text" placeholder="Title" [(ngModel)]="product.title" name="productTitle" required>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row my-0">
+      <div class="col-md-12 my-0">
+        <mat-form-field style="width: 100%;">
+          <mat-label>Product Type</mat-label>
+          <mat-select [(ngModel)]="product.productType" name="productType" required>
+            <mat-option *ngFor="let type of productType as string" [value]="type">{{ type }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row my-0">
+      <div class="col-md-12 my-0">
+        <mat-form-field style="width: 100%;">
+          <input matInput type="number" step="0.01" placeholder="Price" [(ngModel)]="product.price" name="productPrice" required>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row my-0">
+      <div class="col-md-12 my-0">
+        <mat-form-field style="width: 100%;">
+          <textarea matInput placeholder="Description" [(ngModel)]="product.description" name="productDescription" row my-0s="4"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row my-0">
+      <div class="col-md-12 my-0">
+        <mat-form-field style="width: 100%;">
+          <textarea matInput placeholder="Specification" [(ngModel)]="product.specification" name="productSpecification" row my-0s="4"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row my-0">
+      <div class="col-md-12 my-0">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

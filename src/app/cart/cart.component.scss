@@ -1,0 +1,33 @@
+.cart-cards-container {
+    margin-top: 20px; /* Adjust the top margin as needed */
+  }
+  
+.cart-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .cart-card {
+    width: calc(30% - 20px);
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    background-color:  rgba(255, 255, 200, 0.9);
+  }
+  
+  .cart-card mat-card-header {
+    padding: 12px;
+  }
+  
+  .cart-card mat-card-content {
+    padding: 12px;
+  }
+  
+  .cart-card mat-card-actions {
+    padding: 12px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
