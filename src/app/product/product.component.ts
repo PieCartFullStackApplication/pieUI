@@ -37,6 +37,10 @@ export class ProductComponent {
       this.showErrorMessage('Title must be non Empty');
       return;
     }
+    if (this.product.productType == null || this.product.productType == undefined) {
+      this.showErrorMessage('productType must be chosen');
+      return;
+    }
     const existingProductIndex = this.productItems.findIndex((item: Product)=> item.id === this.product.id);
     if (this.mode == "create") {
       this.productService.createProduct(this.product).subscribe({

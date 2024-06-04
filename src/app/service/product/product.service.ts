@@ -33,7 +33,7 @@ export class ProductService {
   }
 
   deleteProduct(id:number): Observable<void>  {
-    return this.http.delete<void>(this.productUrl);
+    return this.http.delete<void>(this.productUrl+`/${this.id}`);
   }
 
 }
