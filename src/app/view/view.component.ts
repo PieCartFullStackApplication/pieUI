@@ -28,9 +28,28 @@ export class ViewComponent implements OnInit {
     });
   }
 
-  // deleteProduct:any(product: Product) {
-  //   product.title="wdwd";
-  // }
+  deleteProduct(id: number): void {
+    this.productService.deleteProduct(id).subscribe({
+      next: response => {
+        this.productItems = this.productItems.filter(item => item.id !== id);
+        this.showSuccessMessage('Product Deleted successfully');
+      },
+      error: error => {
+        this.showErrorMessage('Error Deleting Product');
+      }
+      
+    });
+    this.cartService.deleteCartItemsByProductId(id).subscribe({
+      next: response => {
+        this.cartItems = this.cartItems.filter(item => item.productId !== id);
+        this.showSuccessMessage('Product Deleted successfully');
+      },
+      error: error => {
+        this.showErrorMessage('Error Deleting Product');
+      }
+      
+    });
+  }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe({

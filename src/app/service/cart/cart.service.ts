@@ -38,4 +38,8 @@ export class CartService {
     const url = `${this.cartUrl}/${cartItemId}`;
     return this.http.delete<void>(url);
   }
+  deleteCartItemsByProductId(id: number): Observable<void> {
+    const url = `${this.cartUrl}/productItem/${id}`;
+    return this.http.delete<void>(url);
+  }
 }

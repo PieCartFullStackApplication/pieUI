@@ -29,6 +29,14 @@ export class ProductComponent {
 
 
   onSubmit(): void {
+    if (this.product.price < 0) {
+      this.showErrorMessage('Price must be greater than 0');
+      return;
+    }
+    if (this.product.title == null || this.product.title == "") {
+      this.showErrorMessage('Title must be non Empty');
+      return;
+    }
     const existingProductIndex = this.productItems.findIndex((item: Product)=> item.id === this.product.id);
     if (this.mode == "create") {
       this.productService.createProduct(this.product).subscribe({

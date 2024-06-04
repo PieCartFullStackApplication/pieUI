@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
         this.cartItems = this.cartItems.filter(item => item.id !== cartItemId);
       },
       error: error => {
-        console.error('Failed to delete cart item', error);
+        this.showErrorMessage('Failed to delete cart item');
       }
     });
   }
@@ -40,7 +40,7 @@ export class CartComponent implements OnInit {
         this.cartItems = response;
       },
       error: error => {
-        console.error('Failed to fetch cart items:', error);
+        this.showErrorMessage('Failed to fetch cart items:');
       }
     });
     this.orderService.getOrders().subscribe({
@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
         this.orderItems = response;
       },
       error: error => {
-        console.error('Failed to fetch cart items:', error);
+        this.showErrorMessage('Failed to fetch cart items:');
       }
     });
   }
